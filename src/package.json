@@ -4,8 +4,13 @@
   "description": "Frontend TAO/Core",
   "author": "web@techart.ru",
   "license": "ISC",
+  "scripts": {
+    "compile": "babel --presets es2015,stage-0 -d lib/ src/",
+    "postinstall": "npm run compile"
+  },
   "dependencies": {
   },
   "devDependencies": {
+    "babel-cli": "^6.0.0"
   }
 }
