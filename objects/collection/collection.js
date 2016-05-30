@@ -1,5 +1,5 @@
 /*global Symbol Proxy */
-import ArrayAccess from "component/objects/collection/array-access";
+import ArrayAccess from "./array-access";
 
 let _items = Symbol.for('items');
 
