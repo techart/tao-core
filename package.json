@@ -5,6 +5,7 @@
   "author": "web@techart.ru",
   "license": "ISC",
   "scripts": {
+    "postinstall": "../.bin/babel -d lib/ src/"
   },
   "dependencies": {
   },
