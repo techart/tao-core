@@ -1,5 +1,5 @@
-/*global Symbol Proxy */
-import ArrayAccess from "./array-access";
+/*global Symbol */
+import "./array-access";
 
 let _items = Symbol.for('items');
 
@@ -7,7 +7,11 @@ class ObjectsCollection
 {
 	static from(args = [])
 	{
-		return new Proxy(new this(args), new ArrayAccess());
+		if (window.Proxy) {
+			return new Proxy(new this(args), new ArrayAccess());
+		}
+
+		return new this(args);
 	}
 
 	static make()
@@ -151,6 +155,11 @@ class ObjectsCollection
 	keys(...args)
 	{
 		return [].keys.apply(this[_items], args);
+	}
+
+	indexOf(...args)
+	{
+		return [].indexOf.apply(this[_items], args);
 	}
 
 	lastIndexOf(...args)
