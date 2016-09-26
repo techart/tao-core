@@ -1,5 +1,5 @@
 /*global Symbol */
-import "./array-access";
+import ArrayAccess from "./array-access";
 
 let _items = Symbol.for('items');
 
