@@ -139,7 +139,7 @@ class ObjectsCollection
 
 	forEach(...args)
 	{
-		return [].forEach.apply(this[_items], args);
+		return [].forEach.apply(this[_items].slice(), args);
 	}
 
 	includes(...args)
